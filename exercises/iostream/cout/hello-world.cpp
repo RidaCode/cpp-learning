@@ -1,7 +1,8 @@
 #include <iostream>
 
-int main() {
-  std::cout << "Hello World!"; // print Hello World! to console
+int main()
+{
+    std::cout << "Hello World!"; // print Hello World! to console
 
-  return 0;
+    return 0;
 }
