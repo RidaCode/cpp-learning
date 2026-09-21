@@ -4,11 +4,14 @@
  -Wsign-conversion
 */
 
-void foo(int) {}
+void foo(int)
+{
+}
 
-int main() {
-  unsigned int x{5};
-  foo(x);
+int main()
+{
+    unsigned int x{5};
+    foo(x);
 
-  return 0;
+    return 0;
 }
