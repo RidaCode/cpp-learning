@@ -1,0 +1,1 @@
+void writeAnswer(int num);
