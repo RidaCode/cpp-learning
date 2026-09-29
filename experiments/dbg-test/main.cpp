@@ -1,4 +1,4 @@
-#include "dbg-macro/dbg.h"
+#include "dbg.h"
 #include <cstdio>
 #include <iostream>
 
