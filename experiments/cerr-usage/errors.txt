@@ -1,0 +1,2 @@
+main() called
+getValue() called
