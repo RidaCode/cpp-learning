@@ -1,3 +1,4 @@
-CompileFlags:
-  Remove: [-std=*]
-  Add: [-std=c++23]
+# CompileFlags:
+#   Add:
+#     - -std=c++23
+#     - -I./third_party/plog/include
