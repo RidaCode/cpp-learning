@@ -1,6 +1,40 @@
 #include <cstdlib>
 #include <iostream>
+#include <limits>
 #include <random>
+
+// check if we have something invalid in the stream !std::cin.eof() &&
+// std::cin.peek() != '\n' check if the stream state is in failure mode =>
+// !std::cin
+//      check if the user entered an EOF char => std::cin.eof()
+//          if so exist program => std::exit(0)
+//      else we reset the stream state from failure to normal => std:cin.clear()
+//         clear the stream => clearStream()
+
+// bool somethingLeftInTheBuffer()
+// {
+//     return (!std::cin.eof() && std::cin.peek() != '\n');
+// }
+
+void clearStream()
+{
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+}
+
+bool hasInvalidInStream()
+{
+    if (!std::cin) {
+        if (std::cin.eof()) {
+            std::exit(0);
+        }
+        std::cin.clear();
+        clearStream();
+
+        return true;
+    }
+
+    return false;
+}
 
 int requestGuessNumber(int guessCount)
 {
@@ -33,6 +67,10 @@ void requestRestartGame(int maxGuesses)
     char answer{};
     std::cin >> answer;
 
+    if (hasInvalidInStream()) {
+        std::cout << "Entered invalid choice, choose y/n\n";
+    }
+
     switch (answer) {
     case 'y':
         startGame(maxGuesses);
@@ -41,6 +79,8 @@ void requestRestartGame(int maxGuesses)
         std::exit(0);
         break;
     default:
+        std::cout << "Entered invalid choice, choose y/n\n";
+        clearStream();
         requestRestartGame(maxGuesses);
         break;
     }
@@ -63,6 +103,13 @@ void startGame(int maxGueses)
 
     for (int i = 1; i <= maxGueses; ++i) {
         int enteredGuess{requestGuessNumber(i)};
+
+        if (hasInvalidInStream() || enteredGuess < 1 || enteredGuess > 100) {
+            --i;
+            clearStream();
+            std::cout << "You have entered an invalid guess number\n";
+            continue;
+        }
 
         printGuessResult(enteredGuess, rng);
 
