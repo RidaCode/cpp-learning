@@ -1,0 +1,32 @@
+# Build directories (any executable name)
+.build/
+build/
+build-*/
+cmake-build-*/
+
+# Common executables
+main
+a.out
+*.out
+*.exe
+
+# Object files and libraries
+*.o
+*.obj
+*.a
+*.so
+*.so.*
+*.dylib
+*.dll
+
+# Compiler artifacts
+*.d
+*.gch
+*.pch
+*.pdb
+*.dSYM/
+
+# CMake
+CMakeFiles/
+CMakeCache.txt
+compile_commands.json
