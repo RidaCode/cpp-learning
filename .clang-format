@@ -9,7 +9,7 @@ UseTab: Never
 ColumnLimit: 80
 
 BreakBeforeBraces: Stroustrup
-
+BreakTemplateDeclarations: Yes
 BreakBeforeBinaryOperators: All
 AlignOperands: AlignAfterOperator
 
