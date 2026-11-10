@@ -1,9 +1,11 @@
 // define your factorial() function template here
 
 #include <cassert>
-unsigned long long factorial(int n)
+
+template <int n>
+constexpr unsigned long long factorial()
 {
-    assert(n >= 0);
+    static_assert(n >= 0, "Can't do that is number >= 0");
 
     unsigned long long result{1};
 
@@ -16,16 +18,11 @@ unsigned long long factorial(int n)
 
 int main()
 {
-    // static_assert(factorial<0>() == 1);
-    // static_assert(factorial<3>() == 6);
-    // static_assert(factorial<5>() == 120);
+    static_assert(factorial<0>() == 1);
+    static_assert(factorial<3>() == 6);
+    static_assert(factorial<5>() == 120);
 
-    assert(factorial(0) == 1);
-    assert(factorial(3) == 6);
-    assert(factorial(5) == 120);
-
-    // factorial<-3>(); // should fail to compile
-    factorial(-3);
+    factorial<-3>(); // should fail to compile
 
     return 0;
 }
