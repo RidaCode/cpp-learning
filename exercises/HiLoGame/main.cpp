@@ -76,7 +76,7 @@ void requestRestartGame(int maxGuesses)
         startGame(maxGuesses);
         break;
     case 'n':
-        std::exit(0);
+        std::exit(EXIT_SUCCESS);
         break;
     default:
         std::cout << "Entered invalid choice, choose y/n\n";
