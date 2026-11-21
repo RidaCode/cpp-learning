@@ -12,19 +12,19 @@ std::string_view getAnimalName(Animal animal)
 
     switch (animal) {
     case pig:
-        return "A pig has";
+        return "pig";
     case chicken:
-        return "A chicken has";
+        return "chicken";
     case goat:
-        return "A goat has";
+        return "goat";
     case cat:
-        return "A cat has";
+        return "cat";
     case dog:
-        return "A dog has";
+        return "dog";
     case duck:
-        return "A duck has";
+        return "duck";
     default:
-        return "Error animal is not valid\n";
+        return "invalid animal";
     }
 };
 
@@ -32,32 +32,29 @@ std::string_view getAnimalName(Animal animal)
 // that uses a switch statement to print the number of legs each animal walks on
 void printNumberOfLegs(Animal animal)
 {
-    std::string animalName{getAnimalName(animal)};
-    using enum Animal;
+    std::cout << "A " << getAnimalName(animal) << " has ";
 
+    using enum Animal;
     switch (animal) {
+        // 4 legs animals
     case pig:
-        std::cout << animalName << " 4 legs." << std::endl;
-        break;
-    case chicken:
-        std::cout << animalName << " 2 legs." << std::endl;
-        break;
-    case goat:
-        std::cout << animalName << " 4 legs." << std::endl;
-        break;
-    case cat:
-        std::cout << animalName << " 4 legs." << std::endl;
-        break;
     case dog:
-        std::cout << animalName << " 4 legs." << std::endl;
+    case goat:
+    case cat:
+        std::cout << 4;
         break;
+
+        // 2 legs animals
+    case chicken:
     case duck:
-        std::cout << animalName << " 2 legs." << std::endl;
+        std::cout << 2;
         break;
     default:
-        std::cout << "Error animal is not valid\n";
+        std::cout << "????";
         break;
     }
+
+    std::cout << " legs.\n";
 }
 
 int main()
