@@ -20,3 +20,7 @@ AllowShortFunctionsOnASingleLine: None
 AllowShortIfStatementsOnASingleLine: Never
 AllowShortLoopsOnASingleLine: false
 AllowShortBlocksOnASingleLine: Never
+
+Cpp11BracedListStyle: FunctionCall
+BreakAfterOpenBracketBracedList: true
+BreakBeforeCloseBracketBracedList: true
