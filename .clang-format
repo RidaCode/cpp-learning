@@ -24,3 +24,6 @@ AllowShortBlocksOnASingleLine: Never
 Cpp11BracedListStyle: FunctionCall
 BreakAfterOpenBracketBracedList: true
 BreakBeforeCloseBracketBracedList: true
+
+BreakAfterOpenBracketFunction: true
+BreakBeforeCloseBracketFunction: true
