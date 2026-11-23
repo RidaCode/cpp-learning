@@ -27,3 +27,10 @@ BreakBeforeCloseBracketBracedList: true
 
 BreakAfterOpenBracketFunction: true
 BreakBeforeCloseBracketFunction: true
+
+AllowShortCaseLabelsOnASingleLine: true
+AlignConsecutiveShortCaseStatements:
+  Enabled: true
+  AcrossEmptyLines: true
+  AcrossComments: true
+  AlignCaseColons: false
