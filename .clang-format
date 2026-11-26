@@ -34,3 +34,11 @@ AlignConsecutiveShortCaseStatements:
   AcrossEmptyLines: true
   AcrossComments: true
   AlignCaseColons: false
+
+# Force one initializer per line, breaking after the colon
+PackConstructorInitializers: Never
+BreakConstructorInitializers: AfterColon
+ConstructorInitializerIndentWidth: 4
+
+# Add spaces before and inside braced initializers: m_x { x }
+SpaceBeforeCpp11BracedList: true
