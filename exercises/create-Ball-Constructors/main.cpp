@@ -6,27 +6,21 @@ class Ball {
 
   public:
     Ball() :
-        m_color {"black"},
-        m_radius {10.0}
+        Ball("black", 10.0)
     {
-        std::cout << "Ball(" << m_color << ", " << m_radius << ")\n";
     }
 
-    Ball(std::string_view color) :
-        m_color {color},
-        m_radius {10.0}
+    Ball(const std::string_view color) :
+        Ball(color, 10.0)
     {
-        std::cout << "Ball(" << m_color << ", " << m_radius << ")\n";
     }
 
     Ball(float radius) :
-        m_color {"black"},
-        m_radius {radius}
+        Ball("black", radius)
     {
-        std::cout << "Ball(" << m_color << ", " << m_radius << ")\n";
     }
 
-    Ball(std::string color, float radius) :
+    Ball(const std::string_view color, float radius) :
         m_color {color},
         m_radius {radius}
     {
