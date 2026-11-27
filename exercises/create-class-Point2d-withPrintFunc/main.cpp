@@ -1,3 +1,4 @@
+#include <cmath>
 #include <iostream>
 
 class Point2d {
@@ -27,6 +28,14 @@ class Point2d {
     {
         std::cout << "Point2d (" << getX() << ", " << getY() << ")\n";
     }
+
+    double distanceTo(Point2d destPoint)
+    {
+        double xDiff = getX() - destPoint.getX();
+        double yDiff = getY() - destPoint.getY();
+
+        return std::sqrt(xDiff * xDiff + yDiff * yDiff);
+    }
 };
 
 int main()
@@ -38,6 +47,9 @@ int main()
 
     first.print();
     second.print();
+
+    std::cout << "Distance between two points: " << first.distanceTo(second)
+              << '\n';
 
     return 0;
 }
