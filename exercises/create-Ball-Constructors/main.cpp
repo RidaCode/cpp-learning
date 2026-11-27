@@ -1,30 +1,37 @@
 #include <iostream>
 #include <string>
 class Ball {
-    std::string m_color {};
-    float m_radius {};
+    std::string m_color {"black"};
+    double m_radius {10.0};
+
+    void printBallInfo() const
+    {
+        std::cout << "Ball(" << m_color << ", " << m_radius << ")\n";
+    };
 
   public:
-    Ball() :
-        Ball("black", 10.0)
+    Ball()
     {
+        printBallInfo();
     }
 
     Ball(const std::string_view color) :
-        Ball(color, 10.0)
+        m_color {color}
     {
+        printBallInfo();
     }
 
     Ball(float radius) :
-        Ball("black", radius)
+        m_radius {radius}
     {
+        printBallInfo();
     }
 
     Ball(const std::string_view color, float radius) :
         m_color {color},
         m_radius {radius}
     {
-        std::cout << "Ball(" << m_color << ", " << m_radius << ")\n";
+        printBallInfo();
     }
 };
 
