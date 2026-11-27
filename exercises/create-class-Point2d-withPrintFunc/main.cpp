@@ -29,7 +29,7 @@ class Point2d {
         std::cout << "Point2d (" << getX() << ", " << getY() << ")\n";
     }
 
-    double distanceTo(Point2d destPoint)
+    double distanceTo(const Point2d& destPoint)
     {
         double xDiff = getX() - destPoint.getX();
         double yDiff = getY() - destPoint.getY();
