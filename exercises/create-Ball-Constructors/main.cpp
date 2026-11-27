@@ -10,24 +10,21 @@ class Ball {
     };
 
   public:
-    Ball()
+    // NOTE: works as well BUT we need a better way
+    // Ball(double radius) :
+    //     m_color {"black"},
+    //     m_radius {radius}
+    // {
+    //     printBallInfo();
+    // }
+
+    // NOTE: delegating constructor to another constructor below
+    Ball(double radius) :
+        Ball {"black", radius}
     {
-        printBallInfo();
     }
 
-    Ball(const std::string_view color) :
-        m_color {color}
-    {
-        printBallInfo();
-    }
-
-    Ball(float radius) :
-        m_radius {radius}
-    {
-        printBallInfo();
-    }
-
-    Ball(const std::string_view color, float radius) :
+    Ball(const std::string_view color = "black", double radius = 10.0) :
         m_color {color},
         m_radius {radius}
     {
